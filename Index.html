@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ZaliBazar Quantum Pro V2</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+--bg:#050816;
+--card:#0f172a;
+--card2:#111c35;
+--accent:#ff6b2c;
+--accent2:#ff934f;
+--text:#f5f7fa;
+--muted:#9aa4b2;
+--border:rgba(255,255,255,.08);
+--gradient:linear-gradient(135deg,#ff6b2c,#ff934f);
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Hind Siliguri',sans-serif;
+background:radial-gradient(circle at top,#101b33,#050816 60%);
+color:var(--text);
+overflow-x:hidden;
+}
+
+body::-webkit-scrollbar{
+width:10px;
+}
+
+body::-webkit-scrollbar-thumb{
+background:var(--accent);
+border-radius:10px;
+}
+
+.container{
+max-width:1400px;
+margin:auto;
+padding:0 20px;
+}
+
+/* FLOATING BG */
+.bg-glow{
+position:fixed;
+width:500px;
+height:500px;
+background:rgba(255,107,44,.12);
+filter:blur(120px);
+border-radius:50%;
+top:-120px;
+right:-120px;
+z-index:-1;
+animation:float 10s infinite alternate;
+}
+
+.bg-glow2{
+position:fixed;
+width:400px;
+height:400px;
+background:rgba(0,170,255,.08);
+filter:blur(120px);
+border-radius:50%;
+bottom:-120px;
+left:-120px;
+z-index:-1;
+animation:float2 12s infinite alternate;
+}
+
+@keyframes float{
+from{transform:translateY(0px)}
+to{transform:translateY(50px)}
+}
+
+@keyframes float2{
+from{transform:translateX(0px)}
+to{transform:translateX(60px)}
+}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:999;
+backdrop-filter:blur(20px);
+background:rgba(5,8,22,.88);
+border-bottom:1px solid var(--border);
+}
+
+.navbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:14px 0;
+gap:20px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:24px;
+font-weight:900;
+}
+
+.logo-icon{
+width:52px;
+height:52px;
+border-radius:16px;
+background:var(--gradient);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+box-shadow:0 10px 30px rgba(255,107,44,.3);
+}
+
+.logo span{
+color:var(--accent);
+}
+
+.search-box{
+flex:1;
+max-width:650px;
+display:flex;
+align-items:center;
+background:rgba(255,255,255,.04);
+border:1px solid var(--border);
+border-radius:50px;
+overflow:hidden;
+}
+
+.search-box input{
+flex:1;
+background:none;
+border:none;
+outline:none;
+color:white;
+padding:15px 20px;
+font-size:15px;
+}
+
+.search-box button{
+padding:15px 24px;
+border:none;
+background:var(--gradient);
+color:white;
+font-weight:700;
+cursor:pointer;
+}
+
+.nav-actions{
+display:flex;
+gap:12px;
+}
+
+.nav-btn{
+background:rgba(255,255,255,.04);
+border:1px solid var(--border);
+color:white;
+padding:12px 18px;
+border-radius:14px;
+font-weight:700;
+transition:.3s;
+}
+
+.nav-btn:hover{
+background:var(--gradient);
+transform:translateY(-2px);
+}
+
+/* HERO */
+.hero{
+padding:70px 0;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:40px;
+align-items:center;
+}
+
+.tag{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:10px 16px;
+border-radius:50px;
+background:rgba(255,107,44,.12);
+color:var(--accent2);
+font-weight:700;
+border:1px solid rgba(255,107,44,.2);
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:64px;
+line-height:1.05;
+font-weight:900;
+margin-bottom:18px;
+}
+
+.hero h1 span{
+background:var(--gradient);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+font-size:18px;
+color:var(--muted);
+line-height:1.8;
+margin-bottom:30px;
+}
+
+.hero-buttons{
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+}
+
+.btn-primary{
+padding:16px 28px;
+border:none;
+border-radius:14px;
+background:var(--gradient);
+color:white;
+font-weight:800;
+font-size:16px;
+box-shadow:0 10px 30px rgba(255,107,44,.3);
+}
+
+.btn-secondary{
+padding:16px 28px;
+border-radius:14px;
+background:rgba(255,255,255,.04);
+border:1px solid var(--border);
+color:white;
+font-weight:700;
+}
+
+.hero-stats{
+display:flex;
+gap:40px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.stat h2{
+font-size:38px;
+font-weight:900;
+}
+
+.stat p{
+font-size:13px;
+margin:0;
+}
+
+.hero-card{
+background:linear-gradient(180deg,#101b33,#0b1224);
+border:1px solid var(--border);
+padding:24px;
+border-radius:28px;
+position:relative;
+overflow:hidden;
+box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.hero-card img{
+width:100%;
+border-radius:20px;
+height:400px;
+object-fit:cover;
+}
+
+.offer-badge{
+position:absolute;
+top:20px;
+left:20px;
+background:#ff003c;
+padding:10px 18px;
+border-radius:50px;
+font-weight:800;
+}
+
+.countdown{
+margin-top:18px;
+display:flex;
+gap:12px;
+}
+
+.time-box{
+flex:1;
+background:rgba(255,255,255,.05);
+padding:14px;
+border-radius:14px;
+text-align:center;
+}
+
+.time-box h3{
+font-size:26px;
+}
+
+/* TRUST */
+.trust{
+padding:25px 0 10px;
+}
+
+.trust-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
+
+.trust-card{
+background:rgba(255,255,255,.03);
+border:1px solid var(--border);
+padding:20px;
+border-radius:20px;
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.trust-card i{
+font-size:26px;
+color:var(--accent);
+}
+
+/* MAIN */
+.main-layout{
+display:grid;
+grid-template-columns:260px 1fr;
+gap:25px;
+padding:40px 0;
+}
+
+.sidebar{
+position:sticky;
+top:100px;
+height:fit-content;
+}
+
+.panel{
+background:rgba(255,255,255,.03);
+border:1px solid var(--border);
+border-radius:24px;
+padding:22px;
+margin-bottom:20px;
+}
+
+.panel h3{
+margin-bottom:18px;
+font-size:18px;
+}
+
+.category{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 14px;
+border-radius:14px;
+margin-bottom:8px;
+transition:.3s;
+cursor:pointer;
+}
+
+.category:hover{
+background:rgba(255,107,44,.1);
+transform:translateX(5px);
+}
+
+.category-left{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.products-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.products-top h2{
+font-size:34px;
+}
+
+.filter-row{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.filter-btn{
+padding:12px 18px;
+border-radius:14px;
+background:rgba(255,255,255,.04);
+border:1px solid var(--border);
+color:white;
+font-weight:700;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+gap:24px;
+}
+
+.product{
+background:linear-gradient(180deg,#101b33,#0c1325);
+border:1px solid var(--border);
+border-radius:24px;
+overflow:hidden;
+transition:transform .3s ease,border-color .3s ease;
+position:relative;
+}
+
+.product:hover{
+transform:translateY(-8px);
+border-color:rgba(255,107,44,.4);
+}
+
+.product img{
+width:100%;
+height:240px;
+object-fit:cover;
+}
+
+.discount{
+position:absolute;
+top:14px;
+left:14px;
+background:var(--gradient);
+padding:8px 14px;
+border-radius:50px;
+font-size:13px;
+font-weight:800;
+}
+
+.wishlist{
+position:absolute;
+top:14px;
+right:14px;
+width:42px;
+height:42px;
+border-radius:50%;
+background:rgba(0,0,0,.5);
+display:flex;
+align-items:center;
+justify-content:center;
+backdrop-filter:blur(10px);
+}
+
+.product-content{
+padding:20px;
+}
+
+.store{
+font-size:12px;
+color:var(--accent2);
+font-weight:700;
+margin-bottom:8px;
+}
+
+.product h4{
+font-size:17px;
+margin-bottom:12px;
+line-height:1.5;
+min-height:52px;
+}
+
+.rating{
+color:#ffc107;
+margin-bottom:12px;
+}
+
+.price-row{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:16px;
+}
+
+.price{
+font-size:28px;
+font-weight:900;
+}
+
+.old-price{
+font-size:14px;
+text-decoration:line-through;
+color:var(--muted);
+}
+
+.product-buttons{
+display:flex;
+gap:10px;
+}
+
+.cart-btn{
+flex:1;
+padding:14px;
+border:none;
+border-radius:14px;
+background:var(--gradient);
+color:white;
+font-weight:800;
+}
+
+.view-btn{
+width:52px;
+border-radius:14px;
+border:1px solid var(--border);
+background:rgba(255,255,255,.04);
+color:white;
+}
+
+/* BANNER */
+.big-banner{
+margin:60px 0;
+background:linear-gradient(135deg,#ff6b2c,#ff934f);
+padding:50px;
+border-radius:32px;
+text-align:center;
+color:white;
+}
+
+.big-banner h2{
+font-size:52px;
+margin-bottom:14px;
+}
+
+.big-banner p{
+font-size:18px;
+max-width:800px;
+margin:auto auto 24px;
+}
+
+/* REVIEW */
+.review-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+margin-top:30px;
+}
+
+.review{
+background:rgba(255,255,255,.03);
+border:1px solid var(--border);
+padding:24px;
+border-radius:24px;
+}
+
+.review-top{
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:18px;
+}
+
+.review img{
+width:60px;
+height:60px;
+border-radius:50%;
+object-fit:cover;
+}
+
+/* FOOTER */
+footer{
+margin-top:80px;
+padding:70px 0 30px;
+background:#08101f;
+border-top:1px solid var(--border);
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+.footer-col h3{
+margin-bottom:20px;
+}
+
+.footer-col p,
+.footer-col a{
+color:var(--muted);
+display:block;
+margin-bottom:12px;
+}
+
+.footer-bottom{
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid var(--border);
+text-align:center;
+color:var(--muted);
+}
+
+/* MOBILE NAV */
+.mobile-nav{
+display:none;
+}
+
+@media(max-width:1000px){
+.hero-grid,
+.main-layout,
+.trust-grid,
+.review-grid,
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.sidebar{
+display:none;
+}
+
+.search-box{
+display:none;
+}
+}
+
+@media(max-width:700px){
+.hero{
+padding:40px 0;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero-card img{
+height:280px;
+}
+
+.big-banner{
+padding:30px 20px;
+}
+
+.big-banner h2{
+font-size:32px;
+}
+
+.mobile-nav{
+display:flex;
+justify-content:space-around;
+align-items:center;
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:rgba(5,8,22,.96);
+backdrop-filter:blur(20px);
+padding:14px;
+border-top:1px solid var(--border);
+z-index:999;
+}
+
+.mobile-nav a{
+color:white;
+font-size:20px;
+}
+
+body{
+padding-bottom:90px;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+<div class="bg-glow2"></div>
+
+<header>
+<div class="container navbar">
+
+<div class="logo">
+<div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+<div>Zali<span>Bazar</span></div>
+</div>
+
+<div class="search-box">
+<input type="text" placeholder="স্মার্ট AI সার্চ করুন...">
+<button><i class="fa-solid fa-magnifying-glass"></i></button>
+</div>
+
+<div class="nav-actions">
+<button class="nav-btn"><i class="fa-regular fa-user"></i></button>
+<button class="nav-btn"><i class="fa-regular fa-heart"></i></button>
+<button class="nav-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+</div>
+
+</div>
+</header>
+
+<section class="hero">
+<div class="container hero-grid">
+
+<div>
+<div class="tag">
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+AI Powered Smart Marketplace
+</div>
+
+<h1>বাংলাদেশের <span>নতুন প্রজন্মের</span> স্মার্ট মার্কেটপ্লেস</h1>
+
+<p>
+ZaliBazar Quantum Pro এখন আরও futuristic। AI recommendation, ultra premium UI, smart shopping experience এবং lightning-fast performance নিয়ে তৈরি next-level ecommerce platform.
+</p>
+
+<div class="hero-buttons">
+<button class="btn-primary">🚀 এখনই শুরু করুন</button>
+<button class="btn-secondary">লাইভ ডেমো</button>
+</div>
+
+<div class="hero-stats">
+<div class="stat">
+<h2>৫০+ লাখ</h2>
+<p>প্রোডাক্ট</p>
+</div>
+
+<div class="stat">
+<h2>২০+ লাখ</h2>
+<p>গ্রাহক</p>
+</div>
+
+<div class="stat">
+<h2>৫০,০০০+</h2>
+<p>বিক্রেতা</p>
+</div>
+</div>
+</div>
+
+<div class="hero-card">
+<div class="offer-badge">FLASH SALE</div>
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop" alt="phone">
+
+<div class="countdown">
+<div class="time-box">
+<h3 id="hours">12</h3>
+<p>ঘণ্টা</p>
+</div>
+<div class="time-box">
+<h3 id="minutes">45</h3>
+<p>মিনিট</p>
+</div>
+<div class="time-box">
+<h3 id="seconds">55</h3>
+<p>সেকেন্ড</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="trust">
+<div class="container trust-grid">
+
+<div class="trust-card">
+<i class="fa-solid fa-shield-halved"></i>
+<div>
+<h4>Secure Payment</h4>
+<p>১০০% নিরাপদ</p>
+</div>
+</div>
+
+<div class="trust-card">
+<i class="fa-solid fa-truck-fast"></i>
+<div>
+<h4>Fast Delivery</h4>
+<p>সারা বাংলাদেশ</p>
+</div>
+</div>
+
+<div class="trust-card">
+<i class="fa-solid fa-headset"></i>
+<div>
+<h4>24/7 Support</h4>
+<p>লাইভ সহায়তা</p>
+</div>
+</div>
+
+<div class="trust-card">
+<i class="fa-solid fa-rotate-left"></i>
+<div>
+<h4>Easy Return</h4>
+<p>৭ দিনের রিটার্ন</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="container main-layout">
+
+<aside class="sidebar">
+
+<div class="panel">
+<h3>🛍️ ক্যাটাগরি</h3>
+
+<div class="category">
+<div class="category-left">
+<i class="fa-solid fa-mobile-screen"></i>
+<span>মোবাইল</span>
+</div>
+<span>2500</span>
+</div>
+
+<div class="category">
+<div class="category-left">
+<i class="fa-solid fa-laptop"></i>
+<span>ল্যাপটপ</span>
+</div>
+<span>1200</span>
+</div>
+
+<div class="category">
+<div class="category-left">
+<i class="fa-solid fa-shirt"></i>
+<span>ফ্যাশন</span>
+</div>
+<span>5000</span>
+</div>
+
+<div class="category">
+<div class="category-left">
+<i class="fa-solid fa-gamepad"></i>
+<span>গেমিং</span>
+</div>
+<span>900</span>
+</div>
+
+<div class="category">
+<div class="category-left">
+<i class="fa-solid fa-house"></i>
+<span>হোম</span>
+</div>
+<span>2100</span>
+</div>
+
+</div>
+
+<div class="panel">
+<h3>⚡ Live Stats</h3>
+<p style="margin-bottom:12px;color:var(--muted)">🛒 আজকের অর্ডার: ৪৫,৮৮০+</p>
+<p style="margin-bottom:12px;color:var(--muted)">🔥 লাইভ ভিজিটর: ১২,৪৫০+</p>
+<p style="color:var(--muted)">⭐ সন্তুষ্ট গ্রাহক: ৯৮%</p>
+</div>
+
+</aside>
+
+<div>
+
+<div class="products-top">
+<h2>🔥 ট্রেন্ডিং প্রোডাক্ট</h2>
+
+<div class="filter-row">
+<button class="filter-btn">Popular</button>
+<button class="filter-btn">Newest</button>
+<button class="filter-btn">Best Sale</button>
+</div>
+</div>
+
+<div class="product-grid">
+
+<div class="product">
+<div class="discount">-35%</div>
+<div class="wishlist"><i class="fa-regular fa-heart"></i></div>
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
+<div class="product-content">
+<div class="store">Apple Official</div>
+<h4>iPhone 15 Pro Max Titanium Edition</h4>
+<div class="rating">★★★★★ (4.9)</div>
+<div class="price-row">
+<div>
+<div class="price">৳ ১,৮৫,০০০</div>
+<div class="old-price">৳ ২,১০,০০০</div>
+</div>
+</div>
+<div class="product-buttons">
+<button class="cart-btn">কার্টে যোগ করুন</button>
+<button class="view-btn"><i class="fa-regular fa-eye"></i></button>
+</div>
+</div>
+</div>
+
+<div class="product">
+<div class="discount">HOT</div>
+<div class="wishlist"><i class="fa-regular fa-heart"></i></div>
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop">
+<div class="product-content">
+<div class="store">Luxury Time</div>
+<h4>Premium Smart Watch Ultra Black</h4>
+<div class="rating">★★★★★ (4.8)</div>
+<div class="price-row">
+<div>
+<div class="price">৳ ২৪,০০০</div>
+<div class="old-price">৳ ৩০,০০০</div>
+</div>
+</div>
+<div class="product-buttons">
+<button class="cart-btn">কার্টে যোগ করুন</button>
+<button class="view-btn"><i class="fa-regular fa-eye"></i></button>
+</div>
+</div>
+</div>
+
+<div class="product">
+<div class="discount">NEW</div>
+<div class="wishlist"><i class="fa-regular fa-heart"></i></div>
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop">
+<div class="product-content">
+<div class="store">Nike Zone</div>
+<h4>Premium Air Sneaker Limited Edition</h4>
+<div class="rating">★★★★★ (4.7)</div>
+<div class="price-row">
+<div>
+<div class="price">৳ ১২,০০০</div>
+<div class="old-price">৳ ১৬,০০০</div>
+</div>
+</div>
+<div class="product-buttons">
+<button class="cart-btn">কার্টে যোগ করুন</button>
+<button class="view-btn"><i class="fa-regular fa-eye"></i></button>
+</div>
+</div>
+</div>
+
+<div class="product">
+<div class="discount">-20%</div>
+<div class="wishlist"><i class="fa-regular fa-heart"></i></div>
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop">
+<div class="product-content">
+<div class="store">Sound Master</div>
+<h4>Wireless Premium Noise Cancelling Headphone</h4>
+<div class="rating">★★★★★ (4.9)</div>
+<div class="price-row">
+<div>
+<div class="price">৳ ৮,৫০০</div>
+<div class="old-price">৳ ১১,০০০</div>
+</div>
+</div>
+<div class="product-buttons">
+<button class="cart-btn">কার্টে যোগ করুন</button>
+<button class="view-btn"><i class="fa-regular fa-eye"></i></button>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="big-banner">
+<h2>⚡ Quantum Flash Sale</h2>
+<p>
+আজকের সবচেয়ে বড় অফার! হাজার হাজার প্রিমিয়াম প্রোডাক্টে massive discount উপভোগ করুন।
+</p>
+<button class="btn-secondary" style="background:white;color:black;font-weight:900">এখনই শপ করুন</button>
+</div>
+
+<h2 style="font-size:36px;margin-bottom:10px">💬 গ্রাহকদের মতামত</h2>
+<p style="color:var(--muted)">আমাদের নিয়ে মানুষ যা বলছে</p>
+
+<div class="review-grid">
+
+<div class="review">
+<div class="review-top">
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+<div>
+<h4>Rakib Hasan</h4>
+<p>Verified Buyer</p>
+</div>
+</div>
+<p>
+"ডিজাইনটা অসাধারণ premium feel দেয়। Delivery এবং product quality দুটোই top-level."
+</p>
+</div>
+
+<div class="review">
+<div class="review-top">
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+<div>
+<h4>Nusrat Jahan</h4>
+<p>Fashion Customer</p>
+</div>
+</div>
+<p>
+"আমি honestly অনেক impressed. Mobile experience খুব smooth এবং UI cinematic লাগছে।"
+</p>
+</div>
+
+<div class="review">
+<div class="review-top">
+<img src="https://randomuser.me/api/portraits/men/75.jpg">
+<div>
+<h4>Arif Mahmud</h4>
+<p>Tech Enthusiast</p>
+</div>
+</div>
+<p>
+"এটা বাংলাদেশের marketplace গুলোর মধ্যে future-style UI feel দেয়।"
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+
+<div class="footer-col">
+<h3>ZaliBazar</h3>
+<p>বাংলাদেশের futuristic smart ecommerce platform.</p>
+</div>
+
+<div class="footer-col">
+<h3>Quick Links</h3>
+<a href="#">Home</a>
+<a href="#">Shop</a>
+<a href="#">Flash Sale</a>
+<a href="#">Support</a>
+</div>
+
+<div class="footer-col">
+<h3>Customer</h3>
+<a href="#">My Orders</a>
+<a href="#">Wishlist</a>
+<a href="#">Returns</a>
+<a href="#">Privacy</a>
+</div>
+
+<div class="footer-col">
+<h3>Contact</h3>
+<p>Email: support@zalibazar.com</p>
+<p>Phone: +880 1234-567890</p>
+<p>Dhaka, Bangladesh</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 ZaliBazar Quantum Pro -- All Rights Reserved.
+</div>
+</div>
+</footer>
+
+<div class="mobile-nav">
+<a href="#"><i class="fa-solid fa-house"></i></a>
+<a href="#"><i class="fa-solid fa-shop"></i></a>
+<a href="#"><i class="fa-regular fa-heart"></i></a>
+<a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+<a href="#"><i class="fa-regular fa-user"></i></a>
+</div>
+
+<script>
+let hours = 12;
+let minutes = 45;
+let seconds = 55;
+
+setInterval(()=>{
+seconds--;
+
+if(seconds < 0){
+seconds = 59;
+minutes--;
+}
+
+if(minutes < 0){
+minutes = 59;
+hours--;
+}
+
+if(hours < 0){
+hours = 12;
+}
+
+document.getElementById('hours').innerText = String(hours).padStart(2,'0');
+document.getElementById('minutes').innerText = String(minutes).padStart(2,'0');
+document.getElementById('seconds').innerText = String(seconds).padStart(2,'0');
+},1000);
+
+const cartButtons = document.querySelectorAll('.cart-btn');
+
+cartButtons.forEach(btn=>{
+btn.addEventListener('click',()=>{
+btn.innerText = '✓ যোগ হয়েছে';
+btn.style.background = '#00b894';
+});
+});
+</script>
+
+</body>
+</html>
